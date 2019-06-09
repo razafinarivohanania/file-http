@@ -1,3 +1,10 @@
+/**
+ * Entry point of program
+ * 
+ * - Load server
+ * - Serve page
+ * - Download file
+ */
 const express = require('express');
 const app = express();
 const list = require('./src/list');

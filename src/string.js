@@ -32,13 +32,3 @@ module.exports.substringAfter = (text, search, isLast) => {
         '' :
         text.substring(position + search.length);
 }
-
-/**
- * Decode String encoding on base 64
- * 
- * @param {String} text
- * @param {String} decode text
- */
-module.exports.decodeBase64 = text => {
-    return new Buffer(text, 'base64').toString('ascii');
-}

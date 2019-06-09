@@ -30,6 +30,13 @@
             </tr>
         </thead>
         <tbody>
+            <% if (parent.exists) { %>
+            <tr>
+                <td><img src="image/folder.png"/></td>
+                <td class="left"><a href="<%= parent.url %>">..</a></td>
+                <td class="right">--- o</td>
+            </tr>
+            <% } %>
             <% for (const content of contents) { 
                 const image = content.isFile ?
                     'image/file.png' :
