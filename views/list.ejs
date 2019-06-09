@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>List Folder/File</title>
+    <meta charset="utf-8" />
+    <style>
+        td {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .right {
+            text-align: right;
+        }    
+
+        .left {
+            text-align: left;
+        }    
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const content of contents) { 
+                const image = content.isFile ?
+                    'image/file.png' :
+                    'image/folder.png';
+                %>
+            <tr>
+                <td><img src="<%= image %>"/></td>
+                <td class="left"><a href="<%= content.url %>"><%= content.name %></a></td>
+                <td class="right"><%= content.size %></td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>
