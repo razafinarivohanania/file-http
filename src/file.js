@@ -108,10 +108,7 @@ module.exports.getSize = path => {
  * @return {String} converted path
  */
 module.exports.normalizePath = path => {
-    if (!path)
-        return '';
-
-    return path
-        .replace(/^[\\\//]+/g, '')
-        .replace(/\\+/g, '\/');
+    return path ?
+        path.replace(/\\+/g, '\/') :
+        '';
 }
